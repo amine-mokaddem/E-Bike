@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="3b2aab68-6b61-4afb-a0a9-f4741746310d" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.env.test" afterDir="false" />
@@ -865,6 +866,9 @@
       <change afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/translations/.gitignore" afterDir="false" />
     </list>
+=======
+    <list default="true" id="3b2aab68-6b61-4afb-a0a9-f4741746310d" name="Default Changelist" comment="" />
+>>>>>>> 6e2c7780050718a83a0eda0a265d2871b72b5e5b
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -874,9 +878,12 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+=======
+>>>>>>> 6e2c7780050718a83a0eda0a265d2871b72b5e5b
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
@@ -983,13 +990,20 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1p1WB9fSICaFVjlBZOGGKSaFsm6" />
+<<<<<<< HEAD
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+=======
+>>>>>>> 6e2c7780050718a83a0eda0a265d2871b72b5e5b
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+<<<<<<< HEAD
+=======
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+>>>>>>> 6e2c7780050718a83a0eda0a265d2871b72b5e5b
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -1027,12 +1041,37 @@
       <workItem from="1614807787869" duration="293000" />
       <workItem from="1614808319265" duration="14534000" />
       <workItem from="1614824498929" duration="1651000" />
+<<<<<<< HEAD
       <workItem from="1614827938474" duration="20000" />
       <workItem from="1614827962290" duration="1382000" />
+=======
+      <workItem from="1614828137273" duration="1399000" />
+>>>>>>> 6e2c7780050718a83a0eda0a265d2871b72b5e5b
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="WindowStateProjectService">
+    <state x="715" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1614641518723">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="715" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1614641518723" />
+    <state x="791" y="434" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614824967715">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="791" y="434" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614824967715" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614813296777">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614813296777" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1614790954715">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614790954715" />
+  </component>
+>>>>>>> 6e2c7780050718a83a0eda0a265d2871b72b5e5b
 </project>
