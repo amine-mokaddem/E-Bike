@@ -35,16 +35,16 @@ class EventRepository extends ServiceEntityRepository
         ;
     }
     */
-
-    /*
-    public function findOneBySomeField($value): ?Event
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+    public function orderbynb(){
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('select r from App\Entity\Event r order by r.date_allee ASC ');
+        return $query->getResult();
     }
-    */
+    public function orderbynbb(){
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('select r from App\Entity\Event r order by r.date_allee DESC ');
+        return $query->getResult();
+    }
+
+
 }

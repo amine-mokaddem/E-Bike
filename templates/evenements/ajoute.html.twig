@@ -338,7 +338,7 @@
                     </a>
                     <ul class="sub">
                         <li><a  href="{{ path('affichee')}}">liste evenement</a></li>
-                        <li><a class="" href="form_validation.html">liste participant </a></li>
+                        <li><a class="" href="{{ path('affichepart') }}">liste participant </a></li>
                     </ul>
                 </li>
                 <li class="sub-menu">
@@ -427,15 +427,16 @@
 
                     <div class="form quick-post">
                         <div class="col-lg-5">
-                            {{ form_start(form) }}
+                            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                             <div class="form-group"> {{ form_row(form.nom ,{'attr':{'class': 'form-control'}} ) }}</div>
                             <div class="form-group"> {{ form_row(form.nbr_place,{'attr':{'class': 'form-control'}}) }}</div>
                             <div class="form-group"> {{ form_row(form.depart ,{'attr':{'class': 'form-control'}} ) }}</div>
                             <div class="form-group"> {{ form_row(form.arivee , {'attr':{'class': 'form-control'}}) }}</div>
                             <div class="form-group"> {{ form_row(form.date_allee  ) }}</div>
-                            <div class="form-group"> {{ form_row(form.date_retour)  }}</div>
+                            <div class="form-group"> {{ form_row(form.date_retour) }}</div>
                             <div class="form-group"> {{ form_row(form.description ,{'attr':{'class': 'form-control'}} ) }}</div>
-                            <button type="submit" class="btn btn-primary" >modifier</button>
+                            <div class="form-group"> {{ form_row(form.image)  }}</div>
+                            <button type="submit" class="btn btn-primary" >Ajouter</button>
                             {{ form_end(form) }}
                         </div>
                     </div>

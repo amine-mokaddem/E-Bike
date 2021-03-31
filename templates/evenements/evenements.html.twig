@@ -611,6 +611,7 @@
         <div class="section-large-top">
             <div class="container">
 
+
                 <!--Start class Shortcode tabs-->
                 <div class="tz-shortcode-tabs">
 
@@ -618,7 +619,11 @@
                     <div class="tz-tabs-header">
                         <h2 class="tz-tabs-title pull-left">Liste des evenements</h2>
 
+
                     </div>
+
+                    <a class="glyphicon glyphicon-upload" aria-hidden="true" href="{{ path('afficheee') }}"></a>
+                    <a class="glyphicon glyphicon-download" aria-hidden="true" href="{{ path('afficheeee') }}"></a>
                     <!--End Tabs header-->
 
                     <!--Start Tabs content-->
@@ -629,6 +634,7 @@
                             <!--Start product-->
 
                             <div class="row row-item">
+
                                 {% for i in event %}
                                 <div class="col-md-3 col-sm-6">
 
@@ -636,25 +642,25 @@
 
                                     <div class="product-item">
                                         <div class="product-thubnail">
-                                            <img src="images/product/product4.png" alt="product 4" />
+                                            <img src="{{ asset('upload/images/' ~ i.image) }}" />
                                             <div class="product-meta">
+
+                                                {% if i.nbrplace==0 %}
+                                                <a class="add-to-cart"> evenement complet <a/>
+                                                    {% else %}
                                                 <a class="add-to-cart" href="{{ path('participant',{'id':i.id}) }}">participer</a>
-                                                <span class="quick-view">
-                                                <a href="#">Quick view</a>
+                                                    {% endif %}
+                                                    <span class="quick-view">
+                                                <a href="{{path('Quickview',{'id':i.id})}}">Quick view</a>
                                             </span>
                                             </div>
                                         </div>
 
 
                                         <div class="product-infomation">
-                                            <h4><a href="single-product.html">{{  i.nom}}</a></h4>
-                                            <span class="product-price">$900.00</span>
-                                            <span class="product-attr">
-                                            <i class="fa fa-circle light-blue"></i>
-                                            <i class="fa fa-circle orange"></i>
-                                            <i class="fa fa-circle blueviolet"></i>
-                                            <i class="fa fa-circle orange-dark"></i>
-                                            <i class="fa fa-circle steelblue"></i>
+                                            <h4><a href="single-product.html">{{i.nom}}</a></h4>
+                                            <h4><a href="single-product.html">Nombre de place : {{i.nbrplace}}</a></h4>
+
                                         </span>
                                         </div>
                                     </div>

@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Entity;
-
 use App\Repository\EventRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\String\Slugger\SluggerInterface;
@@ -24,6 +24,12 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *     min = 3,
+     *     max = 5,
+     * minMessage ="Le nom doit comporter au moins {{ limit }} caractères",
+     * maxMessage ="Le nom doit comporter au plus {{ limit }} caractères"
+     *  )
      */
     private $nom;
 
@@ -44,11 +50,15 @@ class Event
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\GreaterThan("today")
      */
     private $date_allee;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\Expression(
+     *     "this.getDateAllee() < this.getDateRetour()",
+     *     message="La date fin ne doit pas être antérieur à la date début")
      */
     private $date_retour;
 
@@ -61,6 +71,14 @@ class Event
      * @ORM\ManyToMany(targetEntity=Participant::class, mappedBy="id_event")
      */
     private $inscription;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="please upload image")
+     * @Assert\File(mimeTypes={"image/jpeg"})
+     */
+    private $image;
 
     public function __construct()
     {
@@ -180,6 +198,18 @@ class Event
         if ($this->inscription->removeElement($inscription)) {
             $inscription->removeIdEvent($this);
         }
+
+        return $this;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image)
+    {
+        $this->image = $image;
 
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use App\Entity\Event;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -21,6 +22,7 @@ class AjoutEventType extends AbstractType
             ->add('date_allee')
             ->add('date_retour')
             ->add('description')
+            ->add('image', FileType::class , array('label' => 'image(JPG)'))
             ;
     }
 

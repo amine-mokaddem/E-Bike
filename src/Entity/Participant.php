@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\ParticipantRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -31,18 +32,27 @@ class Participant
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email()
      */
     private $email;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Regex(
+     *     pattern="/[0-9]{8}/"
+     *  )
      */
     private $numtel;
 
     /**
-     * @ORM\ManyToMany(targetEntity=event::class, inversedBy="inscription")
+     * @ORM\ManyToMany(targetEntity=Event::class, inversedBy="inscription")
      */
     private $id_event;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $etat;
 
     public function __construct()
     {
@@ -122,6 +132,18 @@ class Participant
     public function removeIdEvent(event $idEvent): self
     {
         $this->id_event->removeElement($idEvent);
+
+        return $this;
+    }
+
+    public function getEtat(): ?string
+    {
+        return $this->etat;
+    }
+
+    public function setEtat(string $etat): self
+    {
+        $this->etat = $etat;
 
         return $this;
     }

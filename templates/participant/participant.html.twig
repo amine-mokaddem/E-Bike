@@ -636,7 +636,7 @@
                             <h2>participer</h2>
 
 
-                            {{ form_start(form) }}
+                            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                             <div class="form-row form-row-wide">
                                 {{ form_label(form.nom,"Nom") }}
                                 {{ form_widget(form.nom ,{'attr':{'class': 'form-row form-row-wide'}} ) }}
@@ -645,14 +645,7 @@
                                 {{ form_label(form.prenom,"prenom") }}
                                 {{ form_widget(form.prenom , {'attr':{'class': 'input-text'}}) }}
                             </div>
-                            <div class="form-row form-row-wide">
-                                {{ form_label(form.email,"email") }}
-                                {{ form_widget(form.email ,{'attr':{'class': 'form-row form-row-wide'}} ) }}
-                            </div>
-                            <div class="form-row form-row-wide">
-                                {{ form_label(form.numtel,"numtel") }}
-                                {{ form_widget(form.numtel ,{'attr':{'class': 'form-row form-row-wide'}} ) }}
-                            </div>
+
 
                             <p class="form-row">
                                 <input type="submit" class="button" name="register" value="participer">
