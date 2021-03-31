@@ -63,13 +63,7 @@ class PieceRController extends AbstractController
     }
 
 
-    /**
-     * @Route("/back", name="back")
-     */
-    public function back(): Response
-    {
-        return $this->render('piece_r/piece_r_back.html.twig');
-    }
+
 
 
 

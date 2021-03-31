@@ -1,0 +1,36 @@
+
+
+{% block body %}
+<h1>liste des commande  </h1>
+
+                <table border="2" class="table table-striped table-advance table-hover">
+
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>nom</th>
+                        <th>prenom</th>
+                        <th>adresse</th>
+                        <th>numero tel</th>
+                        <th>email</th>
+                        <th>etat</th>
+                    </tr>
+                    </thead>
+
+                    {% for i in com %}
+                        <tr>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.nom }}</td>
+                            <td>{{ i.prenom}}</td>
+                            <td>{{ i.adresse}}</td>
+                            <td>{{ i.numtel}}</td>
+                            <td>{{ i.email}}</td>
+                            <td>{{ i.etat}}</td>
+
+                        </tr>
+                    {% endfor %}
+
+
+                </table>
+
+{% endblock %}

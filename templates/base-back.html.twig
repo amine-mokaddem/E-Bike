@@ -10,7 +10,8 @@
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>{% block title %} Admin Dashboard {% endblock %}</title>
-{% block css %}
+{% block css %}<link href="css/bootstrap.min.css" rel="stylesheet" type='text/css'>
+    <link href='fonts/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min (2).css" rel="stylesheet">
     <!-- bootstrap theme -->
@@ -51,7 +52,7 @@
 <section id="container" class="">
 
 
-    <header class="header dark-bg">
+    <header class="header ">
         <div class="toggle-nav">
             <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
         </div>
@@ -417,6 +418,7 @@
                     </ol>
                 </div>
             </div>
+
 {#
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
@@ -1116,6 +1118,7 @@
 <script src="js/sparklines.js"></script>
 <script src="js/charts.js"></script>
 <script src="js/jquery.slimscroll.min.js"></script>
+    <script src="https://kit.fontawesome.com/f821c4ac43.js" crossorigin="anonymous"></script>
 <script>
     //knob
     $(function() {

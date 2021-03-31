@@ -5,11 +5,15 @@ namespace App\Controller;
 use App\Entity\Utilisateur;
 use App\Form\LoginType;
 use App\Form\UtilisateurType;
+use Doctrine\Persistence\ObjectManager;
 use phpDocumentor\Reflection\Types\String_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoder;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+
 class UtilisateurController extends AbstractController
 {
     /**
@@ -25,43 +29,24 @@ class UtilisateurController extends AbstractController
     /**
      * @Route("/login", name="login")
      */
-    public function verif(Request $request)
+    public function verif()
     {
-        $User = new Utilisateur();
-        $form = $this->createForm(LoginType::class, $User);
-        $form->handleRequest($request);
-        if ($form->isSubmitted()) {
-            $nom = $User->getNom();
-            $password = $User->getPassword();
-            $user1 = $this->getDoctrine()->getRepository(Utilisateur::class)->findOneBy(array('nom' => $nom, 'password' => $password));
-
-            if (!$user1) {
-                return $this->redirectToRoute("login");
-            } else {
-                $type = $user1->getType();
-                if ($type == 'admin') {
-                    return $this->redirectToRoute("back");
-                } else {
-                    if ($type == 'client') {
-                        return $this->redirectToRoute("home");
-                    }
-                }
-            }
-        }
-        return $this->render("utilisateur/login.html.twig", array("form" => $form->createView()));
+        return $this->render("utilisateur/login.html.twig");
     }
 
 
     /**
      * @Route("creer", name="creer")
      */
-    public function ajoutcompte(Request $request){
+    public function ajoutcompte(Request $request ,  UserPasswordEncoderInterface $encoder){
         $util= new Utilisateur();
         $form= $this->createForm(UtilisateurType::class, $util);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
             $util->setType('client');
             $em= $this->getDoctrine()->getManager();
+            $hash= $encoder->encodePassword($util , $util->getPassword());
+            $util->setPassword($hash);
             $em->persist($util);
             $em->flush();
             return $this->redirectToRoute("login");
@@ -69,13 +54,6 @@ class UtilisateurController extends AbstractController
         return $this->render("utilisateur/creer.html.twig",array("form"=>$form->createView()));
 
     }
-
-
-
-
-
-
-
 
     /**
      * @Route("ajouterU", name="ajouterU")
@@ -127,20 +105,5 @@ class UtilisateurController extends AbstractController
 
         return $this->render("utilisateur/modifierU.html.twig",array("form"=>$form->createView()));
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

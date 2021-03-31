@@ -424,18 +424,18 @@
 
             <div class="panel-body">
                 <div class="padd">
-
-                    <div class="form quick-post">
                         <div class="col-lg-5">
-                            {{ form_start(form) }}
+                            {{ form_start(form , {'attr':{'class': '"form quick-post"'}}) }}
                             <div class="form-group"> {{ form_row(form.marque ,{'attr':{'class': 'form-control'}} ) }}</div>
                             <div class="form-group"> {{ form_row(form.type ,{'attr':{'class': 'form-control'}} ) }}</div>
                             <div class="form-group"> {{ form_row(form.prix , {'attr':{'class': 'form-control'}}) }}</div>
                             <div class="form-group"> {{ form_row(form.quantite ,{'attr':{'class': 'form-control'}} ) }}</div>
+                            <div class="form-group"> {{ form_row(form.description ,{'attr':{'class': 'form-control'}} ) }}</div>
+                            {{ form_row(form.imagev ,{'attr':{'class': 'form-control'}} ) }}
                             <button type="submit" class="btn btn-primary" >ajouter</button>
                             {{ form_end(form) }}
                         </div>
-                    </div>
+
                 </div>
             </div>
 

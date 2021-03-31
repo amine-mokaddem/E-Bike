@@ -176,68 +176,7 @@
                     <!--Shop meta-->
                     <ul class="tz-ecommerce-meta pull-right">
                         <li class="tz-menu-wishlist">
-                            <a href="#"><strong>0</strong></a>
-                        </li>
-                        <li class="tz-mini-cart">
-                            <a href="shop-cart.html"><strong>2</strong>Cart : $199.00</a>
-
-                            <!--Mini cart-->
-                            <ul class="cart-inner">
-                                <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="images/product/product-cart1.png" alt="product search one"></div>
-                                    <div class="mini-cart-ds">
-                                        <h6><a href="single-product.html">Liv Race Day Short</a></h6>
-                                        <span class="mini-cart-meta">
-                                        <a href="single-product.html">$2650.00</a>
-                                        <span class="mini-meta">
-                                           <span class="mini-color">Color: <i class="orange"></i></span>
-                                           <span class="mini-qty">Qty: 5</span>
-                                        </span>
-                                    </span>
-                                    </div>
-                                    <span class="mini-cart-delete"><img src="images/delete.png" alt="delete"></span>
-                                </li>
-                                <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="images/product/product-cart2.png" alt="product search one"></div>
-                                    <div class="mini-cart-ds">
-                                        <h6><a href="single-product.html">City Pedals Sport</a></h6>
-                                        <span class="mini-cart-meta">
-                                        <a href="single-product.html">$2650.00</a>
-                                        <span class="mini-meta">
-                                           <span class="mini-color">Color: <i class="orange"></i></span>
-                                           <span class="mini-qty">Qty: 5</span>
-                                        </span>
-                                    </span>
-                                    </div>
-                                    <span class="mini-cart-delete"><img src="images/delete.png" alt="delete"></span>
-                                </li>
-                                <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="images/product/product-cart3.png" alt="product search one"></div>
-                                    <div class="mini-cart-ds">
-                                        <h6><a href="single-product.html">Gloss</a></h6>
-                                        <span class="mini-cart-meta">
-                                        <a href="single-product.html">$2650.00</a>
-                                        <span class="mini-meta">
-                                           <span class="mini-color">Color: <i class="orange"></i></span>
-                                           <span class="mini-qty">Qty: 5</span>
-                                        </span>
-                                    </span>
-                                    </div>
-                                    <span class="mini-cart-delete"><img src="images/delete.png" alt="delete"></span>
-                                </li>
-                                <li class="mini-subtotal">
-                                <span class="subtotal-content">
-                                    Subtotal:
-                                    <strong class="pull-right">$1,100.00</strong>
-                                </span>
-                                </li>
-                                <li class="mini-footer">
-                                    <a href="shop-cart.html" class="view-cart">View Cart</a>
-                                    <a href="shop-checkout.html" class="check-out">Checkout</a>
-                                </li>
-                            </ul>
-                            <!--End mini cart-->
-
+                            <a href="{{ path('panier') }}"></a>
                         </li>
                     </ul>
                     <!--End Shop meta-->
@@ -308,18 +247,17 @@
                             <div class="tz-product row grid-eff">
 
                                 <!--Product item-->
-
                                 {% for i in veloav %}
                                     <div class="product-item col-md-4 col-sm-6">
                                         <div class="item">
                                             <div class="product-item-inner">
                                                 <div class="product-thumb">
-                                                    <img src="images/product/shop1.jpg" alt="Liv Race Day Short Finger..">
+                                                    <img src="{{ asset('upload/images/' ~ i.imagev) }}">
                                                 </div>
                                                 <div class="product-info">
                                                     <h4><a href="shop.html">{{ i.marque }}</a></h4>
                                                     <span class="p-meta">
-                                                <span class="p-price">$30.00</span>
+                                                <span class="p-price">{{ i.prix }} Dt</span>
                                                 <span class="p-vote">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
@@ -339,10 +277,10 @@
                                                         Excellence is never an accident. It is always the result of high intention and intelligent execution; it represents the wise choice of many alternatives.
                                                     </p>
                                                     <span class="p-mask">
-                                                <a href="{{ path('commande',{'id':i.id}) }} "class="add-to-cart">Acheter</a>
+                                                <a href="{{ path('commande',{'id':i.id} ) }} "class="add-to-cart">Acheter</a>
                                                 <a href="#" class="add-to-wishlist"><i class="fa fa-heart"></i> Add to wishlist</a>
                                                <span class="quick-view">
-                                                    <a href="#"><i class="fa fa-eye"></i> Quick view</a>
+                                                    <a href="{{ path('detail_velo',{'id':i.id} ) }}"><i class="fa fa-eye"></i> afficher detail</a>
                                                 </span>
                                             </span>
                                                 </div>

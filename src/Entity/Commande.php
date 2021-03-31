@@ -20,11 +20,6 @@ class Commande
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=Veloav::class, mappedBy="commande")
-     */
-    private $idvelo;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $adresse;
@@ -54,45 +49,33 @@ class Commande
      */
     private $etat;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Veloav::class, mappedBy="id_commande")
+     */
+    private $veloAvs;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $qunatite;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $datecom;
+
+
     public function __construct()
     {
-        $this->idvelo = new ArrayCollection();
+        $this->veloAvs = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection|Veloav[]
-     */
-    public function getIdvelo(): Collection
-    {
-        return $this->idvelo;
-    }
-
-    public function addIdvelo(Veloav $idvelo): self
-    {
-        if (!$this->idvelo->contains($idvelo)) {
-            $this->idvelo[] = $idvelo;
-            $idvelo->setCommande($this);
-        }
-
-        return $this;
-    }
-
-    public function removeIdvelo(Veloav $idvelo): self
-    {
-        if ($this->idvelo->removeElement($idvelo)) {
-            // set the owning side to null (unless already changed)
-            if ($idvelo->getCommande() === $this) {
-                $idvelo->setCommande(null);
-            }
-        }
-
-        return $this;
-    }
 
     public function getAdresse(): ?string
     {
@@ -165,4 +148,56 @@ class Commande
 
         return $this;
     }
+
+    /**
+     * @return Collection|VeloAv[]
+     */
+    public function getVeloAvs(): Collection
+    {
+        return $this->veloAvs;
+    }
+
+    public function addVeloAv(VeloAv $veloAv): self
+    {
+        if (!$this->veloAvs->contains($veloAv)) {
+            $this->veloAvs[] = $veloAv;
+            $veloAv->addIdCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVeloAv(VeloAv $veloAv): self
+    {
+        if ($this->veloAvs->removeElement($veloAv)) {
+            $veloAv->removeIdCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function getQunatite(): ?int
+    {
+        return $this->qunatite;
+    }
+
+    public function setQunatite(int $qunatite): self
+    {
+        $this->qunatite = $qunatite;
+
+        return $this;
+    }
+
+    public function getDatecom(): ?\DateTimeInterface
+    {
+        return $this->datecom;
+    }
+
+    public function setDatecom(\DateTimeInterface $datecom): self
+    {
+        $this->datecom = $datecom;
+
+        return $this;
+    }
+
 }

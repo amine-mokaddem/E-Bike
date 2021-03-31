@@ -6,11 +6,15 @@ use App\Repository\UtilisateurRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
  */
-class Utilisateur
+class Utilisateur implements UserInterface
 {
     /**
      * @ORM\Id
@@ -19,10 +23,7 @@ class Utilisateur
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $nom;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -31,6 +32,7 @@ class Utilisateur
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min="8",minMessage="Le mot de passe doit contenir 8 caractere")
      */
     private $password;
 
@@ -49,9 +51,22 @@ class Utilisateur
      */
     private $performances;
 
+    public $ConfirmPassword;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $username;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Avis::class, mappedBy="auteur")
+     */
+    private $avis;
+
     public function __construct()
     {
         $this->performances = new ArrayCollection();
+        $this->avis = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -59,17 +74,7 @@ class Utilisateur
         return $this->id;
     }
 
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
 
-    public function setNom(string $nom): self
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
 
     public function getEmail(): ?string
     {
@@ -119,6 +124,19 @@ class Utilisateur
         return $this;
     }
 
+    public function eraseCredentials()
+    {
+
+    }
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+    }
+    public function getRoles()
+    {
+       return ['Role_User'];
+    }
+
     /**
      * @return Collection|Performance[]
      */
@@ -148,4 +166,55 @@ class Utilisateur
 
         return $this;
     }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Avis[]
+     */
+    public function getAvis(): Collection
+    {
+        return $this->avis;
+    }
+
+    public function addAvi(Avis $avi): self
+    {
+        if (!$this->avis->contains($avi)) {
+            $this->avis[] = $avi;
+            $avi->setAuteur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAvi(Avis $avi): self
+    {
+        if ($this->avis->removeElement($avi)) {
+            // set the owning side to null (unless already changed)
+            if ($avi->getAuteur() === $this) {
+                $avi->setAuteur(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString()
+    {
+        return (string) $this->getUsername();
+    }
+
+
+
+
+
 }
