@@ -1,0 +1,42 @@
+<div class="box">
+    <div class="box-header">
+        <h1 style ="margin-bottom: 2%; text-align: center; color: #d11414 ;  " > Gestion Des velos a louer </h1>
+
+
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="tableac" class="table table-striped table-advance table-hover">
+
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>marque</th>
+                <th>type</th>
+                <th>prix</th>
+                <th>quantite</th>
+                <th>modifier</th>
+                <th>supprimer</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in veloal %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.marque}}</td>
+                    <td>{{ i.type}}</td>
+                    <td>{{ i.prix}}</td>
+                    <td>{{ i.quantite}}</td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
