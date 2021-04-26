@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <AnchorPane layoutX="299.0" layoutY="-1.0" prefHeight="774.0" prefWidth="1068.0" style="-fx-background-image: FFFFF;">
+         <children>
+            <TextField fx:id="tfuser" layoutX="422.0" layoutY="223.0" prefHeight="42.0" prefWidth="191.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="tfpass" layoutX="406.0" layoutY="298.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <Button fx:id="fp" layoutX="499.0" layoutY="336.0" mnemonicParsing="false" opacity="0.62" style="-fx-background-color: transparent;" text="Forget Password ?" />
+            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="385.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@34-341000_download-lock-icon-png-blue-clipart-blue-clip.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="login" layoutX="468.0" layoutY="405.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: f4c657;" text="Login" textFill="WHITE" />
+            <Text fill="#0598ff" layoutX="399.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login" wrappingWidth="219.43359300494194">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="53.0" fitWidth="33.0" layoutX="379.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@User-blue-icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label" layoutX="407.0" layoutY="331.0" prefHeight="17.0" prefWidth="219.0" textFill="#ee0404" />
+            <Label fx:id="label1" layoutX="201.0" layoutY="312.0" prefHeight="17.0" prefWidth="139.0" textFill="#24d03d" />
+            <CheckBox fx:id="check" layoutX="540.0" layoutY="301.0" mnemonicParsing="false" opacity="0.41" text="see password" textFill="#181b1e" />
+            <Text fx:id="p" layoutX="404.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="75.31787109375" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="-1.0" prefHeight="768.0" prefWidth="305.0" style="-fx-background-color: #696969;">
+         <children>
+            <Button fx:id="singup" layoutX="46.0" layoutY="268.0" mnemonicParsing="false" style="-fx-background-color: f4c657;" text="Sign up" textFill="WHITE" />
+            <Text fill="WHITE" layoutX="24.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Bike sign up to rent and bye bikes" wrappingWidth="219.43359375">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
