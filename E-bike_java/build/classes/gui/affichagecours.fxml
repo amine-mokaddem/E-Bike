@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AffichagecoursController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="5.0" layoutY="5.0" prefHeight="400.0" prefWidth="729.0" style="-fx-background-color: white;" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@affichageterrains.css" />
+         </stylesheets>
+         <children>
+            <TableView fx:id="affichage" layoutX="222.0" layoutY="293.0" onMouseClicked="#tabAffiche" prefHeight="186.0" prefWidth="484.0">
+               <columns>
+                  <TableColumn fx:id="rCircuit" prefWidth="66.0" text="Circuit" />
+                  <TableColumn fx:id="rDate" prefWidth="75.20001220703125" text="Date" />
+                  <TableColumn fx:id="rDuree" prefWidth="51.20001220703125" text="Durée" />
+                  <TableColumn fx:id="rfrais" minWidth="2.0" prefWidth="67.20004272460938" text="Frais" />
+                  <TableColumn fx:id="rType" prefWidth="75.0" text="Type" />
+                  <TableColumn fx:id="rnbmax" prefWidth="75.0" text="Nb Max" />
+                  <TableColumn fx:id="rnbp" prefWidth="75.0" text="Nb Partic" />
+               </columns>
+            </TableView>
+            <Button layoutX="29.0" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Accueil" textFill="#273746" />
+            <Button layoutX="29.0" layoutY="257.0" mnemonicParsing="false" onAction="#AfficherT" prefHeight="25.0" prefWidth="135.0" text="Affichage" textFill="#273746" />
+            <Pane layoutX="-7.0" layoutY="-9.0" prefHeight="116.0" prefWidth="737.0" style="-fx-background-color: #273746;">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="94.0" layoutX="3.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../image/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="67.0" layoutY="38.0">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="221.0" layoutY="69.0" prefHeight="200.0" prefWidth="502.0" style="-fx-background-color: white;">
+                     <children>
+                        <TextField fx:id="id11" alignment="CENTER" layoutX="15.0" layoutY="60.0" promptText="ID" />
+                        <TextField fx:id="nbmax1" alignment="CENTER" layoutX="183.0" layoutY="101.0" promptText="Email" text="Nombre max" />
+                        <TextField fx:id="duree1" editable="false" layoutX="15.0" layoutY="101.0" promptText="Numero tel" text="Durée" />
+                        <Button fx:id="Supp1" layoutX="202.0" layoutY="143.0" mnemonicParsing="false" onAction="#SupprimerID" text="Supprimer" textFill="#273746" />
+                        <Button fx:id="Rech1" layoutX="305.0" layoutY="143.0" mnemonicParsing="false" onAction="#RechercherID" text="Rechercher" textFill="#273746" />
+                        <TextField fx:id="frais1" editable="false" layoutX="338.0" layoutY="14.0" prefHeight="25.0" prefWidth="115.0" promptText="Prenom Coach" text="Frais" />
+                        <Button fx:id="Rech11" layoutX="417.0" layoutY="60.0" mnemonicParsing="false" onAction="#ModiferD" prefHeight="25.0" prefWidth="72.0" text="Modifer" textFill="#273746" />
+                        <Label layoutX="15.0" layoutY="14.0" text="Affichage :" textFill="#273746">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="circuit1" layoutX="138.0" layoutY="14.0" prefWidth="150.0" promptText="Circuit" />
+                        <DatePicker fx:id="date1" layoutX="179.0" layoutY="60.0" promptText="Date" />
+                        <ComboBox fx:id="type1" layoutX="343.0" layoutY="101.0" prefWidth="150.0" promptText="Type" />
+                        <TextField fx:id="nb1" layoutX="16.0" layoutY="143.0" text="Nombre participant" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane layoutX="177.0" layoutY="107.0" prefHeight="371.0" prefWidth="17.0" style="-fx-background-color: #273746;" />
+            <Button layoutX="29.0" layoutY="202.0" mnemonicParsing="false" onAction="#AjouterT" prefHeight="25.0" prefWidth="135.0" text="Ajouter" textFill="#273746" />
+            <Button layoutX="29.0" layoutY="305.0" mnemonicParsing="false" onAction="#CalculeT" prefHeight="25.0" prefWidth="135.0" text="Calculer" textFill="#273746" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="608.0" prefWidth="1527.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Reclamation_frontController">
+   <children>
+      <Text layoutX="601.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="passer une  reclamation" wrappingWidth="347.31640625">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="piece" layoutX="691.0" layoutY="288.0" prefWidth="150.0" />
+      <TextField fx:id="email" layoutX="691.0" layoutY="212.0" />
+      <TextArea fx:id="description" layoutX="497.0" layoutY="345.0" prefHeight="200.0" prefWidth="592.0" />
+      <TextField fx:id="nom" layoutX="691.0" layoutY="173.0" />
+      <Label layoutX="611.0" layoutY="292.0" text="piece" />
+      <Label layoutX="611.0" layoutY="216.0" text="email" />
+      <Label layoutX="613.0" layoutY="177.0" text="nom" />
+      <Label layoutX="438.0" layoutY="320.0" text="description" />
+      <Button layoutX="734.0" layoutY="552.0" mnemonicParsing="false" onAction="#ajouterreclamation" text="ajouter reclamation" />
+      <ComboBox fx:id="type" layoutX="692.0" layoutY="248.0" onAction="#changerpiece" prefWidth="150.0" />
+      <Label layoutX="612.0" layoutY="252.0" text="type" />
+      <HBox layoutX="4.0" layoutY="48.0" prefHeight="52.0" prefWidth="1520.0" style="-fx-background-color: #273746;">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="141.0" stylesheets="@style.css" text="home" />
+            <Button mnemonicParsing="false" onAction="#goshopfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Shop" />
+            <Button mnemonicParsing="false" onAction="#golocationfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Location" />
+            <Button mnemonicParsing="false" onAction="#goeventfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Evenement" />
+            <Button mnemonicParsing="false" onAction="#gocoursfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Cours" />
+            <Button mnemonicParsing="false" onAction="#goperffront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Performance" />
+            <Button mnemonicParsing="false" onAction="#gorecfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Reclamation" />
+            <ButtonBar prefHeight="48.0" prefWidth="481.0" style="-fx-background-color: #273746;" />
+         </children>
+      </HBox>
+      <ImageView fitHeight="48.0" fitWidth="191.0" layoutX="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo1%20(2).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

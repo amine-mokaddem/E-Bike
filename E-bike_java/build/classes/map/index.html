@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Map JavaFX</title>
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div id="map"></div>
+<script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+<script>
+
+    map = new OpenLayers.Map("map");
+    map.addLayer(new OpenLayers.Layer.OSM());
+
+    var lonLat = new OpenLayers.LonLat(10.17972, 36.80278)
+    
+
+        .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+        );
+
+    var zoom = 16;
+    
+
+    var markers = new OpenLayers.Layer.Markers("Markers");
+    map.addLayer(markers);
+
+	/*var testMarker = new OpenLayers.Marker(lonLat);
+    markers.addMarker(testMarker);*/
+
+    map.setCenter(lonLat, zoom);
+	
+	function addMarker(lat, lng) {
+        markers.addMarker(new OpenLayers.Marker(new OpenLayers.LonLat(lat, lng)
+        .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+        )));
+    }
+	
+	function getLonLat(lat, lng){
+		return new OpenLayers.LonLat(lat, lng)
+			.transform(
+				new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+				map.getProjectionObject() // to Spherical Mercator Projection
+			); 
+	}
+
+    function popup(lat, lng, msg) {
+        var popup = new OpenLayers.Popup( null,
+            getLonLat(lat, lng),
+            
+            new OpenLayers.Size(200, 200),
+            msg,
+            true);
+        map.addPopup(popup);
+        return popup;
+    }
+	/*changement*/
+	function addMarkerPopup(lat, lng, msg) {
+		var marker = new OpenLayers.Marker(new OpenLayers.LonLat(lat, lng)
+        .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+        ));
+        markers.addMarker(marker);
+		
+		var popupEl = popup(lat, lng, msg);
+		popupEl.hide();
+		marker.events.element.addEventListener("click", function() {
+			popupEl.show();
+		});
+    }
+
+    /*var testPopup = popup(10.17972, 36.80278, "test").hide();
+	testMarker.events.element.addEventListener("click", function() {
+		testPopup.show();
+	});*/
+</script>
+</body>
+
+</html>

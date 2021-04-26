@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" scaleX="2.0" scaleY="2.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="420.0" minWidth="10.0" prefWidth="105.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label fx:id="label1" prefHeight="19.0" prefWidth="83.0" text="Label" translateX="7.0" GridPane.columnIndex="1" />
+      <ImageView fx:id="imgView" fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</GridPane>

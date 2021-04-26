@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="1103.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ParticipantController">
+   <children>
+      <TableView fx:id="tableevent" layoutX="14.0" layoutY="32.0" prefHeight="409.0" prefWidth="801.0">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="83.0" text="nom" />
+          <TableColumn fx:id="nbr" prefWidth="115.0" text="nbr_place" />
+            <TableColumn fx:id="depart" prefWidth="58.0" text="depart" />
+            <TableColumn fx:id="ariveee" prefWidth="74.0" text="arivee" />
+            <TableColumn fx:id="date_allee" prefWidth="104.0" text="date_allee" />
+            <TableColumn fx:id="dateretour" prefWidth="92.0" text="dateretour" />
+            <TableColumn fx:id="description" prefWidth="125.0" text="description" />
+            <TableColumn fx:id="image" prefWidth="180.0" text="image" />
+        </columns>
+      </TableView>
+      <TextField fx:id="emailp" layoutX="916.0" layoutY="212.0" />
+      <TextField fx:id="prenomp" layoutX="916.0" layoutY="168.0" />
+      <TextField fx:id="nomp" layoutX="916.0" layoutY="125.0" />
+      <Spinner fx:id="numtel" layoutX="916.0" layoutY="257.0" />
+      <Label layoutX="862.0" layoutY="129.0" text="nom" />
+      <Label layoutX="862.0" layoutY="261.0" text="numtel" />
+      <Label layoutX="862.0" layoutY="216.0" text="email" />
+      <Label layoutX="862.0" layoutY="172.0" text="prenom" />
+      <Button layoutX="957.0" layoutY="325.0" mnemonicParsing="false" text="participer" />
+      <Text layoutX="846.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="participer a un evenement" wrappingWidth="237.638671875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

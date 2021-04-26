@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="163.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <Label fx:id="nom" layoutX="36.0" layoutY="73.0" text="nom" />
+      <Label fx:id="prenom" layoutX="106.0" layoutY="73.0" text="prenom" />
+      <Label fx:id="email" layoutX="214.0" layoutY="73.0" text="email" />
+      <Label fx:id="etat" layoutX="428.0" layoutY="73.0" text="etat" />
+      <Label fx:id="numtel" layoutX="314.0" layoutY="73.0" text="numtel" />
+      <Button fx:id="btnsupprimmer" layoutX="516.0" layoutY="69.0" mnemonicParsing="false" text="supprimer" />
+   </children>
+</AnchorPane>

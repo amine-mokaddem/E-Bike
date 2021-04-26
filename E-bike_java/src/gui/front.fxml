@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane id="AnchorPane" fx:id="front" prefHeight="692.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FrontController">
+   <children>
+      <ImageView fitHeight="65.0" fitWidth="234.0" layoutX="-3.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo1%20(2).png" />
+         </image>
+      </ImageView>
+      <WebView fx:id="webView" layoutX="14.0" layoutY="124.0" prefHeight="463.0" prefWidth="654.0" />
+      <JFXTextField fx:id="nom" focusColor="#61677c" labelFloat="true" layoutX="721.0" layoutY="166.0" promptText="Entrer le Nom" unFocusColor="#3b317c" />
+      <JFXTextField fx:id="prenom" focusColor="#5e6a8d" labelFloat="true" layoutX="721.0" layoutY="211.0" promptText="Entrer le Prénom" unFocusColor="#8d96c9" />
+      <JFXTextField fx:id="email" layoutX="721.0" layoutY="253.0" promptText="Entrer le mail" unFocusColor="#6f7cab" />
+      <JFXTextField fx:id="tel" labelFloat="true" layoutX="721.0" layoutY="290.0" promptText="Numéro Tel" unFocusColor="#6f89ae" />
+      <Button fx:id="participer" layoutX="706.0" layoutY="342.0" mnemonicParsing="false" onAction="#participer" prefHeight="36.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #5297ec; -fx-border-width: 1.5px;" text="Participer" textFill="#5297ec">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="loadBtn" layoutX="502.0" layoutY="623.0" mnemonicParsing="false" onAction="#loadData" prefHeight="36.0" prefWidth="166.0" style="-fx-background-color: #ffffff; -fx-border-color: #5297ec; -fx-border-width: 1.5px;" text="Reload Map" textFill="#5297ec">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <HBox layoutX="-1.0" layoutY="58.0" prefHeight="52.0" prefWidth="944.0" style="-fx-background-color: #273746;">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="141.0" stylesheets="@style.css" text="home" />
+            <Button mnemonicParsing="false" onAction="#goshopfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Shop" />
+            <Button mnemonicParsing="false" onAction="#golocationfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Location" />
+            <Button mnemonicParsing="false" onAction="#goeventfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Evenement" />
+            <Button mnemonicParsing="false" onAction="#gocoursfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Cours" />
+            <Button mnemonicParsing="false" onAction="#goperffront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Performance" />
+            <Button mnemonicParsing="false" onAction="#gorecfront" prefHeight="48.0" prefWidth="138.0" stylesheets="@style.css" text="Reclamation" />
+            <ButtonBar prefHeight="52.0" prefWidth="88.0" style="-fx-background-color: #273746;" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
